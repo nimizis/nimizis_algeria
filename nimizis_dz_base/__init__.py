@@ -10,4 +10,4 @@ from odoo.api import Environment, SUPERUSER_ID
 
 def post_install(cr, registry):
     env = Environment(cr, SUPERUSER_ID, {'active_test': False})
-    env['ir.module.module']._load_module_terms(['l10n_dz_region'], ['fr_FR'], overwrite=True)
+    env['ir.module.module']._load_module_terms(['nimizis_dz_base'], ['fr_FR'], overwrite=True)
