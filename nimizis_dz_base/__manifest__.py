@@ -4,11 +4,12 @@
     'version': '1.7',
 
     'author': 'NIMIZIS',
-    'website': 'nimizis.com',
+    'website': 'https://nimizis.com',
     'maintainer': 'hm@nimizis.com',
     'license': 'AGPL-3',
     'category': 'Localization',
     'post_init_hook': 'post_install',
+    'images': ['static/description/banner.gif'],
     'depends': [
         'contacts'
     ],
