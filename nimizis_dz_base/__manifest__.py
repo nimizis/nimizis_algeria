@@ -9,7 +9,7 @@
     'license': 'AGPL-3',
     'category': 'Localization',
     'post_init_hook': 'post_install',
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner nimizis_dz_base.gif'],
     'depends': [
         'contacts'
     ],
