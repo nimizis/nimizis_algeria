@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+            <record id="nimi_wilaya_form_view"  model="ir.ui.view">
+            <field name="name">res country state forme</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_form"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="commune_ids"/>
+                    <field name="region_id"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="nimi_wilaya_tree_view" model="ir.ui.view">
+            <field name="name">res.country.state.tree</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_tree"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="name_arabe"/>
+                </xpath>
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="region_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="nimi_wilaya_search" model="ir.ui.view">
+            <field name="name">res.country.state.search nimi</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_search" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="country_id" />
+                    <filter name="wilaya" string="Wilaya d'Algérie" domain="[('country_id', '=', 62)]"/>
+
+                </field>
+            </field>
+        </record>
+
+
+
+        <record id="base.action_country_state" model="ir.actions.act_window">
+            <field name="name">Fed. States</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.country.state</field>
+            <field name="view_mode">form,tree</field>
+            <field name="context">{"search_default_wilaya":1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a State
+                </p><p>
+                    Federal States belong to countries and are part of your contacts' addresses.
+                </p>
+            </field>
+        </record>
+
+</odoo>

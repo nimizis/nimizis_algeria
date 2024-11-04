@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+       <record id="nimi_res_company_form" model="ir.ui.view">
+            <field name="name">res company form Nimi </field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('oe_title')]" position="before">
+                    <label for="forme_juridique_id"/>
+                        <h3>
+                            <field name="forme_juridique_id" />
+                        </h3>
+                 </xpath>
+
+                <xpath expr="//group[1]/group[1]" position="replace">
+                    <group>
+                        <field name="partner_id" string="Contact" readonly="1" required="0" groups="base.group_no_one"/>
+
+                        <label for="street" string="Address"/>
+                        <div class="o_address_format_nimi">
+                            <field name="country_id" placeholder="Pays" style="width: 50%" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" />
+                            <field name="state_id" placeholder="Wilaya" string="Wilaya" style="width: 50%" options="{'no_open': True, 'no_quick_create': True}"  context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                            <field name="commune_id"  placeholder="Commune" style="width: 50%" options="{'no_open': True, 'no_quick_create': True}"  context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}" />
+                            <field name="zip" placeholder="Code postal" style="width: 50%" />
+                            <field name="city" placeholder="Ville" style="width: 50%" />
+                            <field name="street" placeholder="Rue..." class="o_address_street" />
+                            <field name="street2" placeholder="Rue 2..." class="o_address_street" />
+                        </div>
+
+                        <field name="company_registry" string="R.C"/>
+                        <field name="vat" string="N.I.F" />
+                        <field name="nis"/>
+                        <field name="ai"/>
+                        <field name="share_capital"/>
+                        <field name="currency_id" options="{'no_create': True, 'no_open': True}" id="company_currency" context="{'active_test': False}"/>
+                    </group>
+                 </xpath>
+
+            </field>
+        </record>
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Commune"
+          id="menu_commune"
+		  action="action_commune"
+          parent="contacts.menu_localisation" sequence="5"/>
+
+    <menuitem
+            id="contacts.menu_country_group"
+            parent="contacts.menu_localisation"
+            sequence="15"/>
+
+    <menuitem name="Formes juridiques"
+              id="menu_forme_juridique"
+              action="action_forme_juridique"
+              parent="contacts.res_partner_menu_config"
+              sequence="4"/>
+
+    <menuitem name="Region"
+              id="menu_res_region"
+              action="action_region"
+              parent="contacts.menu_localisation"
+              sequence="6"/>
+</odoo>

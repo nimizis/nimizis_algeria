@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_commune,access_res_commune,model_res_commune,base.group_user,1,1,1,1
+access_forme_juridique,access_forme_juridique,model_forme_juridique,base.group_user,1,1,1,1
+access_res_region,access_res_region,model_res_region,base.group_user,1,1,1,1
+

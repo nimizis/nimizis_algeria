@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_forme_juridique" model="ir.ui.view">
+            <field name="name">forme.juridique.form</field>
+            <field name="model">forme.juridique</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Forme juridique">
+                    <sheet>
+                    <group colspan="4">
+                    <field name="name"/>
+                    </group>
+                    <group colspan="4">
+                    <field name="full_name"/>
+                    </group>
+                    <group>
+                    <field name="description"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_forme_juridique_tree" model="ir.ui.view">
+            <field name="name">forme.juridique.tree</field>
+            <field name="model">forme.juridique</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Forme juridique">
+                    <field name="name"/>
+                    <field name="full_name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+
+	<record id="action_forme_juridique" model="ir.actions.act_window">
+            <field name="name">Formes juridiques</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">forme.juridique</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+</odoo>

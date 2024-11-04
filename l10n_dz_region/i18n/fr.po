@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base
+# Translators:
+# Hichem MEDAI <hm@nimizis.com>, 2024
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_company__vat
+#: model:ir.model.fields,field_description:base.field_res_partner__vat
+#: model:ir.model.fields,field_description:base.field_res_users__vat
+msgid "Tax ID"
+msgstr "N.I.F"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_company__company_registry
+#: model:ir.model.fields,field_description:base.field_res_partner__company_registry
+#: model:ir.model.fields,field_description:base.field_res_users__company_registry
+msgid "Company ID"
+msgstr "R.C"
+
+#. module: contacts
+#: model:ir.ui.menu,name:contacts.menu_country_state_partner
+msgid "Fed. States"
+msgstr "Wilaya"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_fiscal_position__state_ids
+#: model:ir.model.fields,field_description:account.field_account_fiscal_position_template__state_ids
+msgid "Federal States"
+msgstr "Wilaya"
+
+
+#. module: base
+#: model:ir.actions.act_window,name:base.action_country_state
+msgid "Fed. States"
+msgstr "Wilaya"

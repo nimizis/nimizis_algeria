@@ -1,0 +1,75 @@
+<odoo>
+
+        <record id='E_U_R_L' model='forme.juridique'>
+          <field name='full_name'>Entreprise unipersonnelle à responsabilité limitée</field>
+          <field name='name'>EURL</field>
+          <field name='description'>Lorsque la société à responsabilité limitée n’est constituée que d’une seule personne, en tant qu’associé unique, celle ci est dénommée « entreprise unipersonnelle à responsabilité limitée » (EURL).</field>
+        </record>
+
+        <record id='S_A_R_L' model='forme.juridique'>
+          <field name='full_name'>Société à responsabilité limitée</field>
+          <field name='name'>SARL</field>
+          <field name='description'>Elle est instituée par deux ou plsieurs associés qui ne supportent les pertes qu’à concurrence de leurs apports.</field>
+        </record>
+
+        <record id='S_P_A' model='forme.juridique'>
+          <field name='full_name'>Société par actions</field>
+          <field name='name'>SPA</field>
+          <field name='description'>C’est une société dont le capital est divisé en actions et qui est constituée entre actionnaires qui ne supportent les pertes qu’à concurrence de leurs apports.</field>
+        </record>
+
+        <record id='S_C_S' model='forme.juridique'>
+          <field name='full_name'>Société en commandite simple</field>
+          <field name='name'>SCS</field>
+          <field name='description'>Cette forme jurdique qui n’est pratiquement usitée en Algérie, permettrait pourtant de réunir des entrepreneurs acceptant, en qualité de commandités de prendre des risques sur le pattimoine personnel sous la condition de pouvoir réaliser des bénéfices importants tandis que les investisseurs, qui seraient les commanditaires, entenderaient limiter les risques tout en participant aux bénéfices.</field>
+        </record>
+
+        <record id='S_C_A' model='forme.juridique'>
+          <field name='full_name'>Société en commandite par actions</field>
+          <field name='name'>SCA</field>
+          <field name='description'>Sa création est envisagée lorsque des commandités, fondateurs de groupes économiques se réservent un pouvoir de gestion exorbitant à l’effet de faire obstacle à une offre Publique d’achat (OPA) inamicale.</field>
+        </record>
+
+        <record id='S_P' model='forme.juridique'>
+          <field name='full_name'>Société en participation</field>
+          <field name='name'>SP</field>
+          <field name='description'>Est créé entre deux ou plusieurs personnes physiques. Elle possède trois caractéristiques majeures : il s’agit d’une société occulte , d’une société non ostensible et elle repose sur un principe intangible d’engagement aux dettes.</field>
+        </record>
+
+        <record id='G' model='forme.juridique'>
+          <field name='full_name'>Groupement</field>
+          <field name='name'>G</field>
+          <field name='description'>Il s’agit d’une structure particulière qui n’est pas vraiment une société commerciale et qui ne permet pas à elle seule une implantation en Algérie. Il s’agit cependant d’un mode utilisé fréquemment par les sociétés étrangères pour opérer en Algérie dans la mesure où elles le font avec d’autres personnes morales résidentes.</field>
+        </record>
+
+        <record id='B_L' model='forme.juridique'>
+          <field name='full_name'>Bureau de liaison</field>
+          <field name='name'>BL</field>
+          <field name='description'>Réputé n’exercer aucune activité lucrative et ne disposer d’aucun revenu local.</field>
+        </record>
+
+        <record id='S' model='forme.juridique'>
+          <field name='full_name'>Succursale</field>
+          <field name='name'>S</field>
+          <field name='description'>L’établissement de succursale est considérée comme un investissement étranger. A ce titre, cet établissement est soumis aux dispositions de l’ordonnance relative au développement de l’investissement. Mais l’absence de personnalité morale distincte ne permettant pas la mise en place de partenariat,l’ouverture de succursale par des entreprises étrangères est difficilement envisageable depuis.</field>
+        </record>
+
+        <record id='E_P' model='forme.juridique'>
+          <field name='full_name'>Établissement permanent</field>
+          <field name='name'>EP</field>
+          <field name='description'>Cette notion regroupe la notion d’établissement qui est strictement rattachée à l’application des conventions de non double imposition signées par l’Algérie et une notion plus générale d’établissement qui définit la présence en Algérie de sociétés étrangères pour le temps d’exécution d’un contrat.</field>
+        </record>
+
+        <record id='E_P_A' model='forme.juridique'>
+          <field name='full_name'>Établissement public à caractère administratif</field>
+          <field name='name'>EPA</field>
+          <field name='description'>Un établissement public à caractère administratif (EPA) est une personne morale de droit public disposant d'une certaine autonomie administrative et financière afin de remplir une mission d'intérêt général autre qu'industrielle et commerciale, précisément définie, sous le contrôle de l'État ou d'une collectivité territoriale</field>
+        </record>
+
+        <record id='E_P_I_C' model='forme.juridique'>
+          <field name='full_name'>Établissement public à caractère industriel et commercial</field>
+          <field name='name'>EPIC</field>
+          <field name='description'>En Algérie, un établissement public à caractère industriel et commercial (EPIC) est une personne morale de droit public ayant pour but la gestion d'une activité de service public. </field>
+        </record>
+
+</odoo>

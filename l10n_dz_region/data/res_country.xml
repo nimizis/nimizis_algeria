@@ -1,0 +1,12 @@
+<odoo>
+    <record id="base.dz" model="res.country">
+        <field  name="address_format" >%(street)s
+%(street2)s
+%(city)s %(commune)s %(zip)s
+%(state_name)s %(country_name)s
+RC : %(rc)s
+NIF : %(nif)s
+NIS : %(nis)s
+AI : %(ai)s</field>
+    </record>
+</odoo>
