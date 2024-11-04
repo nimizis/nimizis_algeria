@@ -1,23 +1,24 @@
 
 {
-    'name': 'Algeria - Regions',
-    'version': '1.5',
+    'name': 'Algeria - Base',
+    'version': '1.6',
     'description': """ 
     
 Added some functionality (specific algeria):
 
     -   DATA of municipalities
     -   DATA of Wilaya
+    -   Added the legal form in the name displayed by partners
     -   Postal addresses
     -   Mandatory fields for Algerian legislation ( NIS AI..)
     -   the functionality of displaying these fields under the addresses
 ...""",
-    'summary': 'Regions of Algeria',
+    'summary': 'Base Extension for Algeria localisation',
     'author': 'NIMIZIS',
     'website': 'nimizis.com',
     'maintainer': 'hm@nimizis.com',
     'license': 'AGPL-3',
-    'category': 'Tools',
+    'category': 'Localization',
     'post_init_hook': 'post_install',
     'depends': [
         'contacts'
