@@ -1,8 +1,7 @@
 
 {
     'name': 'Algeria - Base',
-    'version': '1.7',
-
+    'version': '1.7.2',
     'author': 'NIMIZIS',
     'website': 'https://nimizis.com',
     'maintainer': 'hm@nimizis.com',

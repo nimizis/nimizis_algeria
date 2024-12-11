@@ -14,13 +14,13 @@ ADDRESS_FIELDS = ('street', 'street2', 'zip', 'city', 'state_id', 'country_id', 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    commune_id = fields.Many2one('res.commune', string='Commune',domain="[('state_id', '=?', state_id)]", track_visibility='onchange')
+    commune_id = fields.Many2one('res.commune', string='Commune',domain="[('state_id', '=?', state_id)]", tracking=True)
     region_id = fields.Many2one('res.region', string='Region',related='state_id.region_id', store=True, readonly=True)
-    country_id = fields.Many2one('res.country', string='Country', required=True,default=lambda self: self.env.ref('base.dz'), track_visibility='onchange')
-    nis = fields.Char(string='N.I.S', track_visibility='onchange')
-    ai = fields.Char(string='Article d\'imposition', track_visibility='onchange')
-    forme_juridique_id = fields.Many2one('forme.juridique', string='Forme juridique', track_visibility='onchange')
-    share_capital = fields.Float('Capital Social', track_visibility='onchange')
+    country_id = fields.Many2one('res.country', string='Country', required=True,default=lambda self: self.env.ref('base.dz'), tracking=True)
+    nis = fields.Char(string='N.I.S', tracking=True)
+    ai = fields.Char(string='Article d\'imposition', tracking=True)
+    forme_juridique_id = fields.Many2one('forme.juridique', string='Forme juridique', tracking=True)
+    share_capital = fields.Float('Capital Social', tracking=True)
 
 
 
