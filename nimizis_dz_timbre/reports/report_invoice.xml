@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_invoice_document_inherit_nimitimbre"
+              inherit_id="account.report_invoice_document"    >
+
+        <!--complicated expr to be compatible with other modules-->
+            <xpath expr="//div[@id='total']/div/table" position="inside">
+                <tr t-if="o.if_timbre!=False" >
+                    <td>Timbre fiscal</td>
+                    <td class="text-end">
+                        <span t-field="o.amount_timbre" widget="monetary"/>
+                    </td>
+                </tr>
+                <tr t-if="o.if_timbre!=False">
+                    <td>Net à payer</td>
+                    <td class="text-end o_price_total">
+                        <span t-field="o.amount_total"  widget="monetary" />
+                    </td>
+                </tr>
+            </xpath>
+
+    </template>
+</odoo>

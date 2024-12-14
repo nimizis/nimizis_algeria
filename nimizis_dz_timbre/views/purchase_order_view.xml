@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record id="nimi_timbre_purchase_view_form" model="ir.ui.view">
+            <field name="name">nimi_TIMBRE.purchase.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_cancel']" position="after">
+					<button name="add_timbre" string="Appliquer le timbre fiscal" type="object" class="oe_highlight"
+                            attrs="{'invisible':['|',
+                            ('if_timbre','=',True),
+                            ('state', '!=', 'draft'),
+                            ]}" />
+                    <button name="del_timbre" string="Enlever le timbre fiscal" type="object" class="oe_highlight"
+                            attrs="{'invisible':['|',
+                            ('if_timbre','=',False),
+                            ('state', '!=', 'draft'),
+                            ]}" />
+                </xpath>
+
+                <xpath expr="//field[@name='fiscal_position_id']" position="after">
+                     <field name="if_timbre" force_save="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='tax_totals']" position="after">
+                        <field name="amount_timbre" attrs="{'invisible':[('if_timbre','=',False)]}"/>
+                    <field name="amount_total" string="Net à payer"  attrs="{'invisible':[('if_timbre','=',False)]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="nimi_timbre_purchase_view_tree">
+            <field name="name">nimi_TIMBRE.purchase.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="before">
+                    <field name="amount_tax"/>
+                    <field name="amount_timbre"/>
+                </xpath>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

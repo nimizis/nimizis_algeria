@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_move_nimi_timbre_form" model="ir.ui.view">
+            <field name="name">account.move.nimizis.timbre</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_draft']" position="after">
+					<button name="add_timbre" string="Appliquer le timbre fiscal" type="object" class="oe_highlight"
+                            attrs="{'invisible':['|','|',
+                            ('if_timbre','=',True),
+                            ('state', '!=', 'draft'),
+                            ('move_type','not in',['out_invoice', 'out_refund', 'in_invoice', 'in_refund'])
+                            ]}" />
+                    <button name="del_timbre" string="Enlever le timbre fiscal" type="object" class="oe_highlight"
+                            attrs="{'invisible':['|','|',
+                            ('if_timbre','=',False),
+                            ('state', '!=', 'draft'),
+                            ('move_type','not in',['out_invoice', 'out_refund', 'in_invoice', 'in_refund'])
+                            ]}" />
+                </xpath>
+
+
+                <xpath expr="//field[@name='fiscal_position_id']" position="after">
+                    <field name="if_timbre"
+                           attrs="{'invisible':[('move_type','not in',['out_invoice', 'out_refund', 'in_invoice', 'in_refund'])]}"
+                           force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals']" position="after">
+                    <field name="amount_timbre" force_save="1" attrs="{'invisible':[('if_timbre','=',False)]}"/>
+                    <field name="amount_total" string="Net à payer"  attrs="{'invisible':[('if_timbre','=',False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>
