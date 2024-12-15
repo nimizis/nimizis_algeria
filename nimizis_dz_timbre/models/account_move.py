@@ -3,12 +3,8 @@
 #
 # Copyright (c) 2024  - NiMiZiS - www.nimizis.com
 #                                                hm@nimizis.com
-from odoo import api, exceptions, fields, models, tools, Command, _
-from odoo.exceptions import ValidationError, UserError
-from contextlib import ExitStack, contextmanager
-import logging
-
-_logger = logging.getLogger(__name__)
+from odoo import api, exceptions, fields, models, _
+from odoo.exceptions import ValidationError
 import math
 
 
