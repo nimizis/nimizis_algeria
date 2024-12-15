@@ -29,6 +29,7 @@
 		<li> The accounting accounts for recording the Purchase and Sale stamp duty are entered by default; you can replace them with those in your accounting plan.</li> <br/>
 		<li> The Minimum and Maximum stamp duty thresholds as well as the bracket or % on which the calculation should apply, leave these values as default unless there is a change in tax regulations.</li> <br/>
 		<li> Wherever you are on a sales order, purchase order, or an invoice, you'll find a button labeled <b><i>'Appliquer le timbre fiscal'</i></b>  Once you click on it, it will calculate the stamp duty tax amount according to the configuration, <br/>
+		<li> Wherever you are on a sales order, purchase order, or an invoice, you'll find a button labeled <b><i>'Appliquer le timbre fiscal'</i></b>  Once you click on it, it will calculate the stamp duty tax amount according to the configuration, <br/>
 		You can cancel the calculation of the tax stamp by clicking on the button <b><i>'Enlever le timbre fiscal'</i></b> This operation is only possible when the Invoice/Bill or Credit Note is in Draft state</li>
             
         </ul>
@@ -66,7 +67,7 @@
             </li>
             <li>
                 <h3>Search and filters</h3>
-                <p>Added a boolean field "Stamp ?" which allows to easily search for documents that include stamp duty and to do a custom filter on it"*</p>
+                <p>Added a boolean field "Timbre ?" which allows to easily search for documents that include stamp duty and to do a custom filter on it"*</p>
                 <img src="bool.png">
 				<img src="filtre.gif">
             </li>
