@@ -5,7 +5,7 @@
 #                                                hm@nimizis.com
 
 
-from odoo import fields, models, api,_
+from odoo import fields, models,
 
 class Country(models.Model):
     _inherit = 'res.company'
@@ -17,4 +17,3 @@ class Country(models.Model):
     commune_id = fields.Many2one('res.commune',related='partner_id.commune_id', string='Commune',domain="[('state_id', '=?', state_id)]", readonly=False, tracking=True)
     share_capital = fields.Float('Capital Social', tracking=True)
 
-    # region_id = fields.Many2one('res.region', string='Region',related='state_id.region_id', store=True, readonly=True)

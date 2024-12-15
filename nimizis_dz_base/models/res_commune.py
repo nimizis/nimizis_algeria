@@ -4,7 +4,7 @@
 # Copyright (c) 2024  - NiMiZiS - www.nimizis.com
 #                                                hm@nimizis.com
 
-from odoo import fields, models, api
+from odoo import fields, models
 
 class ResCommune(models.Model):
     _name = 'res.commune'
