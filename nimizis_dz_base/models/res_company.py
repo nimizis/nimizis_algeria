@@ -5,7 +5,7 @@
 #                                                hm@nimizis.com
 
 
-from odoo import fields, models,
+from odoo import fields, models
 
 class Country(models.Model):
     _inherit = 'res.company'
