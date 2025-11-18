@@ -34,22 +34,12 @@
                             <div class="o_setting_left_pane"/>
                             <div class="o_setting_right_pane">
                                 <span class="o_form_label">Configuration</span>
-                                <div class="text-muted">Définissez La configuration <b>( % | min | max )</b> pour le Timbre                                </div>
+                                <div class="text-muted">Définissez la configuration à appliquer pour le calcul du droit de timbre, en précisant l'année de la loi de finances et la méthode de calcul.</div>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label for="prcent"
+                                        <label for="fiscal_year"
                                                class="col-md-3 o_light_label"/>
-                                        <field name="prcent" /> %
-                                    </div>
-                                    <div class="row mt16">
-                                        <label for="timbre_min"
-                                               class="col-md-3 o_light_label"/>
-                                        <field name="timbre_min" /> DA
-                                    </div>
-                                    <div class="row mt16">
-                                        <label for="timbre_max"
-                                               class="col-md-3 o_light_label"/>
-                                        <field name="timbre_max" /> DA
+                                        <field name="fiscal_year" />
                                     </div>
                                 </div>
                             </div>

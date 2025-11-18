@@ -4,6 +4,7 @@
 # Copyright (c) 2024  - NiMiZiS - www.nimizis.com
 #                                                hm@nimizis.com
 
+from . import nimizis_compute_timbre
 from . import res_conf
 from . import account_move
 from . import purchase_order

@@ -12,9 +12,13 @@ class ResCompany(models.Model):
 
     sales_timbre_account_id = fields.Many2one('account.account', string="Compte comptable timbre Vente",default=lambda self: self.env.ref('l10n_dz.1_pcg_44575'))
     purchase_timbre_account_id = fields.Many2one('account.account', string="Compte comptable timbre Achat",default=lambda self: self.env.ref('l10n_dz.1_pcg_6457'))
-    prcent = fields.Float('% timbre',default=1, required=True, tracking=True)
-    timbre_min = fields.Integer('Min', default=5, required=True, tracking=True)
-    timbre_max = fields.Integer('Max',default=10000, required=True, tracking=True)
+
+    fiscal_year = fields.Selection(
+        selection=[('2020', 'Loi de finance 2020'),
+                   ('2023', 'Loi de finance 2023'),
+                   ('2025', 'Loi de finance 2025'),
+                   ],string='Loi de finance',default='2025',required=True)
+
 
 
 class ResConfigSettings(models.TransientModel):
@@ -22,6 +26,6 @@ class ResConfigSettings(models.TransientModel):
 
     sales_timbre_account_id = fields.Many2one('account.account', string="Compte comptable timbre Vente", related='company_id.sales_timbre_account_id', readonly=False)
     purchase_timbre_account_id = fields.Many2one('account.account', string="Compte comptable timbre Achat", related='company_id.purchase_timbre_account_id', readonly=False)
-    prcent = fields.Float('% Timbre',default=1, required=True,related='company_id.prcent', readonly=False)
-    timbre_min = fields.Integer('Min', default=5, required=True,related='company_id.timbre_min', readonly=False)
-    timbre_max = fields.Integer('Max',default=10000, required=True,related='company_id.timbre_max', readonly=False)
+
+    fiscal_year = fields.Selection(string='Loi de finance',related='company_id.fiscal_year',readonly=False,required=True)
+

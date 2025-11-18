@@ -5,7 +5,7 @@
 #                                                hm@nimizis.com
 from odoo import api, exceptions, fields, models, _
 from odoo.exceptions import ValidationError
-import math
+from . import nimizis_compute_timbre
 
 
 class AccountInvoiceTimbre(models.Model):
@@ -13,6 +13,7 @@ class AccountInvoiceTimbre(models.Model):
 
     if_timbre = fields.Boolean(string='Timbre ?', default=False,readonly=True,)
     amount_timbre = fields.Monetary(string='Montant du Timbre', readonly=True,store=1,tracking=True)
+    txt_timbre = fields.Char(string='Loi de finance appliqué', readonly=True,store=1,tracking=True)
 
     # the function that applies the stamp on the invoice
     def add_timbre(self):
@@ -30,12 +31,9 @@ class AccountInvoiceTimbre(models.Model):
                         total_untaxed_currency += line.amount_currency
                 total_untaxed_currency=total_untaxed_currency*rec.direction_sign
                 total_tax_currency=total_tax_currency*rec.direction_sign
-                amount_timbre = math.ceil(((total_tax_currency+total_untaxed_currency) * rec.company_id.prcent) / 100)
-                if amount_timbre < rec.company_id.timbre_min:
-                    amount_timbre = rec.company_id.timbre_min
-                elif amount_timbre > rec.company_id.timbre_max:
-                    amount_timbre = rec.company_id.timbre_max
+                amount_timbre = nimizis_compute_timbre.compute_stamp(rec.company_id.fiscal_year,(total_tax_currency+total_untaxed_currency))
                 rec.amount_timbre = amount_timbre
+                rec.txt_timbre = rec.company_id.fiscal_year
                 if  (rec.move_type == "out_invoice" or rec.move_type == "out_refund"):
                     already_exists = rec.line_ids.filtered(lambda line: line.name and line.account_id == rec.company_id.sales_timbre_account_id)
                 if  (rec.move_type == "in_invoice" or rec.move_type == "in_refund"):
@@ -124,6 +122,7 @@ class AccountInvoiceTimbre(models.Model):
     def del_timbre(self):
         self.if_timbre = False
         self.amount_timbre = 0
+        self.txt_timbre = ""
         already_exists = False
         if (self.move_type == "out_invoice" or self.move_type == "out_refund"):
             already_exists = self.line_ids.filtered(

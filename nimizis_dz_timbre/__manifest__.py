@@ -11,7 +11,7 @@
     "author": "NiMiZiS",
     'maintainer': 'hm@nimizis.com',
     "license": "AGPL-3",
-    "depends": [ 'l10n_dz','purchase', 'sale' ],
+    "depends": [ 'l10n_dz','purchase', 'sale_management' ],
     'category': 'Accounting/Localizations',
 
     'images': ['static/description/Nimizis dz timbre.gif'],

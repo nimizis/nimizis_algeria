@@ -20,6 +20,7 @@
                 </xpath>
                 <xpath expr="//field[@name='show_update_fpos']" position="after">
                      <field name="if_timbre" force_save="1"/>
+                     <field name="txt_timbre" force_save="1"/>
                 </xpath>
                 <xpath expr="//field[@name='tax_totals']" position="after">
                     <field name="amount_timbre" attrs="{'invisible':[('if_timbre','=',False)]}"/>

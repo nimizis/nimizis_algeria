@@ -27,6 +27,9 @@
                     <field name="if_timbre"
                            attrs="{'invisible':[('move_type','not in',['out_invoice', 'out_refund', 'in_invoice', 'in_refund'])]}"
                            force_save="1"/>
+                    <field name="txt_timbre"
+                           attrs="{'invisible':[('if_timbre','=',False)]}"
+                           force_save="1"/>
                 </xpath>
                 <xpath expr="//field[@name='tax_totals']" position="after">
                     <field name="amount_timbre" force_save="1" attrs="{'invisible':[('if_timbre','=',False)]}"/>

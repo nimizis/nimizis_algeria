@@ -5,8 +5,7 @@
 #                                                hm@nimizis.com
 from odoo import models, fields, api
 from odoo.tools.misc import format_date, formatLang
-import math
-
+from . import nimizis_compute_timbre
 
 
 class TimbrePurchases(models.Model):
@@ -14,14 +13,17 @@ class TimbrePurchases(models.Model):
 
     amount_timbre=fields.Monetary(string='Montant du Timbre', readonly=True, compute='_amount_all',tracking=True, store=True)
     if_timbre=fields.Boolean(string='Timbre ?',readonly=True, default=False)
+    txt_timbre = fields.Char(string='Loi de finance appliqué', readonly=True,store=1,tracking=True)
 
     # the function that applies the stamp on the invoice
     def add_timbre(self):
         self.if_timbre = True
+        self.txt_timbre = self.company_id.fiscal_year
 
     # the function that removes the stamp application from the invoice
     def del_timbre(self):
         self.if_timbre = False
+        self.txt_timbre = ""
 
     @api.depends('order_line.price_total', 'if_timbre')
     def _amount_all(self):
@@ -37,11 +39,7 @@ class TimbrePurchases(models.Model):
                 amount_tax = sum(order_lines.mapped('price_tax'))
             amount_timbre=0
             if order.if_timbre:
-                amount_timbre = math.ceil(((amount_untaxed+amount_tax) * order.company_id.prcent) / 100)
-                if amount_timbre < order.company_id.timbre_min:
-                    amount_timbre = order.company_id.timbre_min
-                elif amount_timbre > order.company_id.timbre_max:
-                    amount_timbre = order.company_id.timbre_max
+                amount_timbre = nimizis_compute_timbre.compute_stamp(order.company_id.fiscal_year,amount_untaxed+amount_tax)
             order.amount_timbre = amount_timbre
             order.amount_untaxed = amount_untaxed
             order.amount_tax = amount_tax
@@ -69,6 +67,7 @@ class TimbrePurchases(models.Model):
     def _prepare_invoice(self):
         res = super(TimbrePurchases, self)._prepare_invoice()
         res['if_timbre'] = self.if_timbre
+        res['txt_timbre'] = self.txt_timbre
         return res
 
 
